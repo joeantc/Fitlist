@@ -25,6 +25,6 @@ jobs:
           pip install -r requirements.txt
 
       # Run your script
-      - name: Run script
+      - name: Run notebook
         run: |
           papermill Fitlist.ipynb Fitlist_output.ipynb
