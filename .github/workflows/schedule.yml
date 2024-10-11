@@ -1,0 +1,33 @@
+name: Scheduled Script Run
+
+on:
+  schedule:
+    # Run every day at 00:00 UTC (adjust the cron as needed)
+    - cron: '*/15 * * * *'
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+    steps:
+      # Check out the repository code
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Set up Python (or any other language runtime)
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'  # Replace with the version you need
+
+      # Install dependencies (if any)
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install notion_client
+          pip install dropbox
+          pip install papermill
+
+      # Run your script
+      - name: Run script
+        run: |
+          papermill Fitlist.ipynb Fitlist_output.ipynb  #
