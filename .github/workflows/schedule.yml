@@ -28,4 +28,4 @@ jobs:
       # Run your script
       - name: Run script
         run: |
-          papermill Fitlist.ipynb Fitlist_output.ipynb  #
+          papermill Fitlist.ipynb Fitlist_output.ipynb
