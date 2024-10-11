@@ -2,3 +2,4 @@ papermill
 dropbox
 notion_client
 ipykernel
+google-cloud-secret-manager
