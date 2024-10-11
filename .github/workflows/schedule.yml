@@ -27,12 +27,21 @@ jobs:
       # Set environment variables using GitHub secrets
       - name: Set environment variables
         env:
-          APP_KEY: ${{ secrets.APP_KEY }}
+          APP_KEY: ${{ secrets.APP_KEY }}  
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
         run: echo "Environment variables set"
 
       # Run the Jupyter notebook
       - name: Run notebook
         env:
-          APP_KEY: ${{ secrets.APP_KEY }}  # Set it again for the notebook run if required
+          APP_KEY: ${{ secrets.APP_KEY }}  
+          APP_SECRET: ${{ secrets.APP_SECRET }}
+          NOTION_API_KEY: ${{ secrets.NOTION_API_KEY }}
+          REFRESH_TOKEN: ${{ secrets.REFRESH_TOKEN }}
+          
+          
+          # Set it again for the notebook run if required
         run: |
           papermill Fitlist.ipynb Fitlist_output.ipynb
