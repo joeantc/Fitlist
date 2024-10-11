@@ -1,3 +1,4 @@
 papermill
 dropbox
 notion_client
+ipykernel
