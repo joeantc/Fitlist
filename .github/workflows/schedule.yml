@@ -23,8 +23,6 @@ jobs:
       - name: Install dependencies
         run: |
           pip install -r requirements.txt
-          pip install notion_client
-          pip install dropbox
           pip install papermill
 
       # Run your script
